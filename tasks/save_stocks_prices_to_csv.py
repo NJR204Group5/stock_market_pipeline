@@ -12,7 +12,7 @@ import time
 from dateutil.relativedelta import relativedelta
 from config import HEADERS
 from config import OUTPUT_DIR
-from tasks.get_twse_listed_stocks import get_twse_listed_stocks
+from tasks.save_twse_listed_stocks_to_csv import get_twse_listed_stocks
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -221,7 +221,7 @@ def fetch_month_data(stock_code, year, month, retry=5, debug=False):
                         "date": retry_date
                     }
 
-            # ✅ 沒資料
+            # 沒資料
             if "沒有符合條件" in stat:
                 return None
 
